@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TaskInConceptLabs</string>
+    <string name="title_list">Whole List</string>
+    <string name="title_selection">Selection</string>
+
+    <string name="all_the_users">All the users</string>
+    <string name="chosen">Chosen users</string>
+</resources>
