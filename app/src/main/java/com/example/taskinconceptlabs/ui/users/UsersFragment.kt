@@ -26,15 +26,12 @@ class UsersFragment : Fragment() {
     ): View? {
         usersViewModel = ViewModelProvider(this).get(UsersViewModel::class.java)
 
-
         return inflater.inflate(R.layout.fragment_list, container, false)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        Log.d("kkk","onViewCreated")
 
         tv_intro.text = requireContext().getString(R.string.all_the_users)
 
@@ -49,31 +46,4 @@ class UsersFragment : Fragment() {
             adapter.notifyDataSetChanged()
         })
     }
-
-  /*  override fun onPause() {
-        super.onPause()
-        Log.d("kkk","onPause")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("kkk","onResume")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-        usersViewModel.getUsers().observe(viewLifecycleOwner, Observer {
-
-            adapter.users = it
-            adapter.notifyDataSetChanged()
-        })
-        Log.d("kkk","onStart")
-    }*/
-
-
 }

@@ -1,7 +1,6 @@
 package com.example.taskinconceptlabs.data
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.taskinconceptlabs.data.db.Database
@@ -39,7 +38,7 @@ class Repository private constructor(
     fun getUsersFromApi(): LiveData<List<User>> {
         launch {
             try {
-                val users = ApiUser(context).getUsersAsync().await()
+                val users = ApiUser().getUsersAsync().await()
                 usersLiveData.postValue(users)
             }
             catch (ex : Exception){
@@ -57,10 +56,4 @@ class Repository private constructor(
 
     suspend fun removeUser(id: Int) =
         Database(context).getUserDao().remove(id)
-
-    //cancelJob
-    fun cancelJob() {
-        job.cancel()
-    }
-
 }

@@ -17,7 +17,7 @@ interface ApiUser {
 
 
     companion object {
-        operator fun invoke(context: Context): ApiUser {
+        operator fun invoke(): ApiUser {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

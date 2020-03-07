@@ -18,7 +18,6 @@ class SelectionFragment : Fragment() {
     private lateinit var selectionViewModel: SelectionViewModel
     private lateinit var adapter: AdapterUsersRecycler
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,7 +31,6 @@ class SelectionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         tv_intro.text = requireContext().getString(R.string.chosen)
-
 
         adapter = AdapterUsersRecycler(null, selectionViewModel)
         recycler_whole_users.setHasFixedSize(true)
